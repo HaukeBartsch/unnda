@@ -1,3 +1,3 @@
 # Convert NDA data data dictionaries back into ABCD REDCap data dictionaries
 
-This project explores how one can convert one data dictionary format into another.
+This is the source code of a data dictionary converter - convert one data dictionary format into another.
