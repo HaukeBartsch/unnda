@@ -1,3 +1,10 @@
+function downloadNDA( url ) {
+    jQuery.getJSON(url, function(data) {
+        jQuery('#output').text(JSON.stringify(data));
+    });
+}
+
+
 jQuery(document).ready(function() {
 
     // add a test dictionary to the input field
