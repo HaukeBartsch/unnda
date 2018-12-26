@@ -43,6 +43,10 @@ function convert( data ) {
 
 }
 
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
 jQuery(document).ready(function() {
 
     // add a test dictionary to the input field
@@ -50,6 +54,12 @@ jQuery(document).ready(function() {
 
     jQuery('#input').on('change', function() {
         var url = jQuery('#input').val();
+        // check if we are asking for the csv version
+        if (endsWith(url, "/csv")) {
+            url = url.splice(0,-4);
+            jQuery('#input').val(url); // remove the /csv ending
+        }
+
         downloadNDA(url.trim());
     });
 });
