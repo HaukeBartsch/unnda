@@ -1,15 +1,14 @@
 function downloadNDA( url ) {
     jQuery.ajax({
         type: "GET",
-        contentType: "application/json",
         url: url,
         data: {},
         crossDomain: true,
         headers: { 
-            'User-Agent': 'Super Agent/0.0.1',
+            //'User-Agent': 'Super Agent/0.0.1',
             'Content-Type': 'application/x-www-form-urlencoded',  
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            //'Accept': 'application/json',
+            //'Access-Control-Allow-Origin': '*'
         },
         success: function(data) {
             // data is now a string
