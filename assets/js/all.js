@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
     jQuery('#input').val('https://ndar.nih.gov/api/datadictionary/v2/datastructure/cct01/csv');
 
     jQuery('#input').on('change', function() {
-        var url = jQuery('#input').val();
+        var url = jQuery('#input').val().trim();
         // check if we are asking for the csv version
         if (endsWith(url, "/csv")) {
             url = url.splice(0,-4);
