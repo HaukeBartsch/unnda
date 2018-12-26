@@ -1,30 +1,36 @@
 function downloadNDA( url ) {
-    jQuery.getJSON(url, function(data) {
+    jQuery.get(url, function(data) {
+        // data is now a string
+        
         jQuery('#output').text(JSON.stringify(data));
+        var erg = convert(data);
+        jQuery('#output').val(erg);
     });
 }
 
 function convert( data ) {
-    var header = [ 
-                "Variable / Field Name", 
-                "Form Name", 
-                "Section Header", 
-                "Field Type", 
-                "Field Label", 
-                "Choices, Calculations, OR Slider Labels", 
-                "Field Note", 
-                "Text Validation Type OR Show Slider Number", 
-                "Text Validation Min", 
-                "Text Validation Max", 
-                "Identifier?", 
-                "Branching Logic (Show field only if...)", 
-                "Required Field?", 
-                "Custom Alignment", 
-                "Question Number (surveys only)", 
-                "Matrix Group Name", 
-                "Matrix Ranking?", 
-                "Field Annotation",
+    var headerMapping = [ 
+                [ "Variable / Field Name", "ElementName" ],
+                [ "Form Name", "" ],
+                [ "Section Header", "" ],
+                [ "Field Type", "" ],
+                [ "Field Label", "ElementDescription" ],
+                [ "Choices, Calculations, OR Slider Labels",  "" ],
+                [ "Field Note",  "" ],
+                [ "Text Validation Type OR Show Slider Number",  "" ],
+                [ "Text Validation Min",  "" ],
+                [ "Text Validation Max",  "" ],
+                [ "Identifier?",  "" ],
+                [ "Branching Logic (Show field only if...)",  "" ],
+                [ "Required Field?",  "" ],
+                [ "Custom Alignment",  "" ],
+                [ "Question Number (surveys only)",  "" ],
+                [ "Matrix Group Name",  "" ],
+                [ "Matrix Ranking?",  "" ],
+                [ "Field Annotation", "" ]
     ];
+
+
 
 
 }
