@@ -1,10 +1,15 @@
 function downloadNDA( url ) {
     jQuery.ajax({
-        type: "POST",
+        type: "GET",
         contentType: "application/json",
         url: url,
         data: {},
         dataType: "json",
+        headers: { 
+            'Accept': 'application/json', 
+            'Content-Type': 'application/x-www-form-urlencoded',  
+            'User-Agent': 'Super Agent/0.0.1' 
+        },
         success: function(data) {
             // data is now a string
             jQuery('#output').text(JSON.stringify(data));
