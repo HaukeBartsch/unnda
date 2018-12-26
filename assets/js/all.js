@@ -4,10 +4,12 @@ function downloadNDA( url ) {
         contentType: "application/json",
         url: url,
         data: {},
+        crossDomain: true,
         headers: { 
             'User-Agent': 'Super Agent/0.0.1',
             'Content-Type': 'application/x-www-form-urlencoded',  
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         },
         success: function(data) {
             // data is now a string
