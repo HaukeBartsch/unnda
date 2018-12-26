@@ -5,14 +5,14 @@ function downloadNDA( url ) {
         url: url,
         data: {},
         dataType: "json",
-        complete: function(data) {
+        success: function(data) {
             // data is now a string
             jQuery('#output').text(JSON.stringify(data));
             var erg = convert(data);
             jQuery('#output').val(erg);
         }
-    }).fail(function(d) {
-        alert( "error" + d );
+    }).fail(function() {
+        alert( "error" );
     });
 }
 
