@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
         var url = jQuery('#input').val().trim();
         // check if we are asking for the csv version
         if (endsWith(url, "/csv")) {
-            url = url.splice(0,-4);
+            url = url.slice(0,-4);
             jQuery('#input').val(url); // remove the /csv ending
         }
 
