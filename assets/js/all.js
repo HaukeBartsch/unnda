@@ -1,10 +1,16 @@
 function downloadNDA( url ) {
-    jQuery.get(url, function(data) {
-        // data is now a string
-
-        jQuery('#output').text(JSON.stringify(data));
-        var erg = convert(data);
-        jQuery('#output').val(erg);
+    jQuery.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: url,
+        data: {},
+        dataType: "json",
+        complete: function(data) {
+            // data is now a string
+            jQuery('#output').text(JSON.stringify(data));
+            var erg = convert(data);
+            jQuery('#output').val(erg);
+        }
     }).fail(function(d) {
         alert( "error" + d );
     });
