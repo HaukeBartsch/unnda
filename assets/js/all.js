@@ -12,7 +12,7 @@ function downloadNDA( url ) {
         },
         success: function(data) {
             // data is now a string
-            jQuery('#output').text(JSON.stringify(data));
+            jQuery('#output').val(JSON.stringify(data));
             var erg = convert(data);
             jQuery('#output').val(erg);
         }
@@ -43,8 +43,25 @@ function convert( data ) {
                 [ "Field Annotation", "" ]
     ];
 
+    // in data we have now the list of dataElements
+    var t = data['title'].toLowerCase().replace(' ', '_').trim();
 
+    // header line
+    var header = headerMapping.map(function(a) { return a[1]; });
+    
+    // ignore the first couple of entries
+    var ignore = [ "gender", "src_subject_id", "interview_date", "interview_age", "subjectkey" ];
+    var tail = "";
+    for (var i = 0; i < data['dataElements'].length; i++) {
+	var el = data['dataElements'][i];
+	if (ignore.indexOf(el['name']) > -1)
+	    continue;
+	// now create the first 
 
+	
+    }
+    
+    var str = header + "\n" + tail;
 
 }
 
